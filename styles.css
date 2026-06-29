@@ -817,19 +817,18 @@ a {
   }
 
   .site-header {
-    z-index: 1000;
-    right: 18px;
-    left: auto;
+    display: none;
+  }
+
+  .floating-mobile-nav {
+    position: fixed;
+    top: 14px;
+    right: auto;
+    left: 14px;
+    z-index: 10000;
+    display: block;
     width: 82px;
     height: 42px;
-    min-height: 42px;
-    display: block;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-    backdrop-filter: none;
-    transform: none;
   }
 
   .brand-link {
@@ -895,19 +894,19 @@ a {
     bottom: 1px;
   }
 
-  .site-header.is-open .mobile-menu-trigger {
+  .floating-mobile-nav.is-open .mobile-menu-trigger {
     color: var(--green);
     background: var(--orange-2);
     box-shadow: 0 14px 38px rgba(7, 9, 7, 0.28);
     transform: translateY(-1px);
   }
 
-  .site-header.is-open .mobile-menu-icon::before {
+  .floating-mobile-nav.is-open .mobile-menu-icon::before {
     top: 5px;
     transform: rotate(45deg);
   }
 
-  .site-header.is-open .mobile-menu-icon::after {
+  .floating-mobile-nav.is-open .mobile-menu-icon::after {
     bottom: 5px;
     transform: rotate(-45deg);
   }
@@ -939,7 +938,7 @@ a {
       transform 0.34s ease;
   }
 
-  .site-header.is-open .mobile-guide {
+  .floating-mobile-nav.is-open .mobile-guide {
     max-height: 330px;
     padding: 8px;
     border-width: 1px;
@@ -1011,6 +1010,12 @@ a {
     left: auto;
     width: 82px;
     transform: none;
+  }
+
+  .floating-mobile-nav {
+    top: 10px;
+    right: auto;
+    left: 14px;
   }
 
   .mobile-menu-trigger {
@@ -1153,7 +1158,8 @@ a {
   .floating-mobile-nav {
     position: fixed !important;
     top: 14px !important;
-    right: 14px !important;
+    right: auto !important;
+    left: 14px !important;
     z-index: 10000 !important;
     display: block !important;
     width: 82px !important;
@@ -1182,19 +1188,24 @@ a {
     line-height: 1 !important;
   }
 
-  .site-header.is-open .mobile-menu-trigger {
+  .floating-mobile-nav.is-open .mobile-menu-trigger {
     color: var(--green) !important;
     background: var(--orange-2) !important;
   }
 
   .mobile-guide {
     top: 52px !important;
-    right: 0 !important;
-    left: auto !important;
+    right: auto !important;
+    left: 0 !important;
     transform: translateY(-8px) !important;
   }
 
-  .site-header.is-open .mobile-guide {
+  .floating-mobile-nav.is-open .mobile-guide {
+    max-height: 330px !important;
+    padding: 8px !important;
+    border-width: 1px !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
     transform: translateY(0) !important;
   }
 }
